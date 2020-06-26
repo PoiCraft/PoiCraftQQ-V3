@@ -1,6 +1,6 @@
 @echo off
 
-:: SET DevDir=D:\CoolQ Pro\dev\me.cqp.tnze.demo
+SET DevDir=D:\Cqa-Air\dev\com.poicraft.bot.qq
 
 echo Setting proxy
 SET GOPROXY=https://goproxy.cn
