@@ -19,7 +19,7 @@ func Init(dir string) {
 	if err != nil {
 		panic("无法解析配置" + err.Error())
 	}
-	initDB()
+	InitDB()
 }
 
 type Config struct {

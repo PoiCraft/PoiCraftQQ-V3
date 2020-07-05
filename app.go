@@ -40,6 +40,6 @@ func onGroupMsg(subType, msgID int32, fromGroup, fromQQ int64, fromAnonymous, ms
 	ret := func(msg string) {
 		cqp.SendGroupMsg(fromGroup, msg)
 	}
-	syntax.GroupMsg(msg, ret)
+	syntax.GroupMsg(msg, fromQQ, ret)
 	return Ignore
 }

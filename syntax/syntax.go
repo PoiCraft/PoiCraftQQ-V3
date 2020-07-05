@@ -1,6 +1,7 @@
 package syntax
 
 import (
+	"github.com/PoiCraft/PoiCraftQQ-V3/bind"
 	"github.com/PoiCraft/PoiCraftQQ-V3/whitelist"
 	"strings"
 )
@@ -9,7 +10,7 @@ var (
 	Prefix string
 )
 
-func GroupMsg(msg string, ret func(msg string)) bool {
+func GroupMsg(msg string, fromQQ int64, ret func(msg string)) bool {
 	if strings.HasPrefix(msg, Prefix) {
 		cmd := strings.TrimPrefix(msg, Prefix)
 		args := strings.Fields(cmd)
@@ -19,6 +20,8 @@ func GroupMsg(msg string, ret func(msg string)) bool {
 		switch args[0] {
 		case "whitelist":
 			whitelist.Whitelist(args, cmd, ret)
+		case "bind":
+			bind.Bind(args, cmd, fromQQ, ret)
 		}
 	}
 	return false

@@ -1,13 +1,11 @@
 package data
 
 import (
+	"github.com/PoiCraft/PoiCraftQQ-V3/models"
 	"github.com/jinzhu/gorm"
-	_ "github.com/jinzhu/gorm/dialects/mysql"
 )
 
-var DB *gorm.DB
-
-func initDB() {
+func InitDB() {
 	var (
 		db  *gorm.DB
 		err error
@@ -16,5 +14,6 @@ func initDB() {
 	if err != nil {
 		panic("数据库连接不成功：" + err.Error())
 	}
-	DB = db
+	models.DB = db
+	models.Migrate()
 }
