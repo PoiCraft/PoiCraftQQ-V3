@@ -36,5 +36,7 @@ func initFiles() error {
 
 var defaultFiles = map[string]string{
 	"conf.yaml": `mysql: root:root@(127.0.0.1:33060)/poicraft?charset=utf8&parseTime=True&loc=Local
-administrators: [1257135905,3386475667,2331490629]`,
+administrators: [1257135905,3386475667,2331490629]
+remote_url: http://127.0.0.1:8234/map/element-zero
+tp_number: 3`,
 }

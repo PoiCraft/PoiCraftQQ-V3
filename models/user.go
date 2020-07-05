@@ -15,6 +15,7 @@ type User struct {
 	gorm.Model
 	GamerName string
 	QQNumber  string
+	TpNumber  int
 	Status    int
 }
 

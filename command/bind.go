@@ -2,6 +2,7 @@ package command
 
 import (
 	"fmt"
+	"github.com/PoiCraft/PoiCraftQQ-V3/data"
 	"github.com/PoiCraft/PoiCraftQQ-V3/models"
 	"strconv"
 	"strings"
@@ -28,6 +29,7 @@ func Bind(args []string, cmd string, fromQQ int64, ret func(msg string)) {
 		GamerName: gamerName,
 		QQNumber:  qqNumber,
 		Status:    models.Active,
+		TpNumber:  data.Conf.TpNumber,
 	}
 
 	models.DB.Create(&user)

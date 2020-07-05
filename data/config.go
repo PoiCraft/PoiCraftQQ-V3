@@ -25,6 +25,8 @@ func Init(dir string) {
 type Config struct {
 	MySQL          string   `yaml:"mysql"`
 	Administrators []string `yaml:"administrators"`
+	RemoteURL      string   `yaml:"remote_url"`
+	TpNumber       int      `yaml:"tp_number"`
 }
 
 func initConfig() error {
