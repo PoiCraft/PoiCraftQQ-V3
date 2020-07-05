@@ -1,7 +1,9 @@
 package main
 
 import (
+	"github.com/PoiCraft/PoiCraftQQ-V3/command"
 	"github.com/PoiCraft/PoiCraftQQ-V3/data"
+	"github.com/PoiCraft/PoiCraftQQ-V3/log"
 	"github.com/PoiCraft/PoiCraftQQ-V3/syntax"
 	"github.com/Tnze/CoolQ-Golang-SDK/cqp"
 )
@@ -27,6 +29,7 @@ func init() {
 
 func onStart() int32 {
 	data.Init(cqp.GetAppDir())
+	command.Logger = log.NewLogger("command")
 	syntax.Prefix = "#"
 	return 0
 }

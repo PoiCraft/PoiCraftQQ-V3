@@ -1,4 +1,4 @@
-package bind
+package command
 
 import (
 	"fmt"
@@ -32,5 +32,5 @@ func Bind(args []string, cmd string, fromQQ int64, ret func(msg string)) {
 
 	models.DB.Create(&user)
 
-	ret("您已经成功绑定了，但还需要到游戏里发送 #bind " + qqNumber + "进行验证")
+	ret("已经成功绑定！")
 }

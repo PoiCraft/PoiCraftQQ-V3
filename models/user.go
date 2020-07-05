@@ -35,3 +35,13 @@ func IsGamerBindQQ(GamerName string) bool {
 	}
 	return false
 }
+
+func GetUserByQQ(QQNumber string) (User, error) {
+	var user User
+	result := DB.Where("qq_number = ? AND status = ?", QQNumber, Active).First(&user)
+	return user, result.Error
+}
+
+func (user *User) IsAnonymous() bool {
+	return user.ID == 0
+}

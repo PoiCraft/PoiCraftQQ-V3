@@ -1,8 +1,7 @@
 package syntax
 
 import (
-	"github.com/PoiCraft/PoiCraftQQ-V3/bind"
-	"github.com/PoiCraft/PoiCraftQQ-V3/whitelist"
+	"github.com/PoiCraft/PoiCraftQQ-V3/command"
 	"strings"
 )
 
@@ -18,10 +17,10 @@ func GroupMsg(msg string, fromQQ int64, ret func(msg string)) bool {
 			return false
 		}
 		switch args[0] {
-		case "whitelist":
-			whitelist.Whitelist(args, cmd, ret)
 		case "bind":
-			bind.Bind(args, cmd, fromQQ, ret)
+			command.Bind(args, cmd, fromQQ, ret)
+		case "randomtp":
+			command.RandomTp(args, cmd, fromQQ, ret)
 		}
 	}
 	return false
