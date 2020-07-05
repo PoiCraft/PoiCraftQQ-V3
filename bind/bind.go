@@ -27,7 +27,7 @@ func Bind(args []string, cmd string, fromQQ int64, ret func(msg string)) {
 	user := models.User{
 		GamerName: gamerName,
 		QQNumber:  qqNumber,
-		Status:    models.NeedXboxValidate,
+		Status:    models.Active,
 	}
 
 	models.DB.Create(&user)
